@@ -1,0 +1,231 @@
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.print.PrinterException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.Timer;
+import javax.swing.border.EmptyBorder;
+
+
+public class HomeworkUI extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextField nameField;
+
+	private JComboBox<String> moodBox;
+
+	private JTextArea reminderArea;
+
+	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					HomeworkUI frame = new HomeworkUI();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	
+	public HomeworkUI() {
+
+	    setTitle("CareMate 長照照顧 App");
+	    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    setBounds(100, 100, 420, 650);
+
+	    contentPane = new JPanel();
+	    contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+	    contentPane.setLayout(null);
+	    setContentPane(contentPane);
+
+	    JLabel title = new JLabel("CareMate 長照照顧首頁");
+	    title.setFont(new Font("微軟正黑體", Font.BOLD, 22));
+	    title.setBounds(75, 25, 280, 40);
+	    contentPane.add(title);
+
+	    JPanel userPanel = new JPanel();
+	    userPanel.setBorder(BorderFactory.createTitledBorder("個案資訊"));
+	    userPanel.setLayout(null);
+	    userPanel.setBounds(25, 90, 350, 90);
+	    contentPane.add(userPanel);
+
+	    JLabel nameLabel = new JLabel("姓名");
+	    nameLabel.setBounds(10, 25, 80, 25);
+	    userPanel.add(nameLabel);
+
+	    nameField = new JTextField("王小明 先生");
+	    nameField.setBounds(180, 20, 150, 30);
+	    userPanel.add(nameField);
+
+	    JLabel ageLabel = new JLabel("年齡");
+	    ageLabel.setBounds(10, 60, 80, 25);
+	    userPanel.add(ageLabel);
+
+	    JTextField ageField = new JTextField("68歲");
+	    ageField.setBounds(180, 55, 150, 30);
+	    userPanel.add(ageField);
+
+	    JPanel taskPanel = new JPanel();
+	    taskPanel.setBorder(BorderFactory.createTitledBorder("今日照顧任務"));
+	    taskPanel.setLayout(null);
+	    taskPanel.setBounds(25, 200, 350, 90);
+	    contentPane.add(taskPanel);
+
+	    JLabel mealLabel = new JLabel("用餐協助");
+	    mealLabel.setBounds(10, 25, 100, 25);
+	    taskPanel.add(mealLabel);
+
+	    JComboBox<String> mealBox = new JComboBox<>(new String[]{"已完成", "待執行"});
+	    mealBox.setBounds(180, 20, 150, 30);
+	    taskPanel.add(mealBox);
+
+	    JLabel drinkLabel = new JLabel("飲食記錄");
+	    drinkLabel.setBounds(10, 60, 100, 25);
+	    taskPanel.add(drinkLabel);
+
+	    JComboBox<String> drinkBox = new JComboBox<>(new String[]{"已完成", "待執行"});
+	    drinkBox.setBounds(180, 55, 150, 30);
+	    taskPanel.add(drinkBox);
+
+	    JPanel moodPanel = new JPanel();
+	    moodPanel.setBorder(BorderFactory.createTitledBorder("今日心情"));
+	    moodPanel.setLayout(null);
+	    moodPanel.setBounds(25, 310, 350, 85);
+	    contentPane.add(moodPanel);
+
+	    JLabel moodLabel = new JLabel("心情狀態");
+	    moodLabel.setBounds(10, 35, 100, 25);
+	    moodPanel.add(moodLabel);
+
+	    moodBox = new JComboBox<>(new String[]{"很差", "差", "普通", "好", "很好"});
+	    moodBox.setBounds(180, 25, 150, 45);
+	    moodPanel.add(moodBox);
+
+	    JPanel reminderPanel = new JPanel();
+	    reminderPanel.setBorder(BorderFactory.createTitledBorder("重要提醒"));
+	    reminderPanel.setLayout(null);
+	    reminderPanel.setBounds(25, 410, 350, 90);
+	    contentPane.add(reminderPanel);
+
+	    reminderArea = new JTextArea("上午10:00量血壓，請記得協助長輩測量。");
+	    reminderArea.setBounds(5, 20, 340, 60);
+	    reminderPanel.add(reminderArea);
+	    
+	    /*************event***********************/
+
+	    JButton btnConfirm = new JButton("確定");
+	    btnConfirm.setBounds(25, 520, 80, 70);
+	    contentPane.add(btnConfirm);
+
+	    JButton btnPrint = new JButton("列印");
+	    btnPrint.setBounds(115, 520, 80, 70);
+	    contentPane.add(btnPrint);
+
+	    JButton btnClear = new JButton("清除");
+	    btnClear.setBounds(205, 520, 80, 70);
+	    contentPane.add(btnClear);
+
+	    JButton btnClose = new JButton("關閉");
+	    btnClose.setBounds(295, 520, 80, 70);
+	    contentPane.add(btnClose);
+	    
+	    JLabel time = new JLabel("");
+	    time.setBounds(201, 65, 174, 27);
+	    contentPane.add(time);
+	    
+	    DateTimeFormatter now = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+		Timer timer = new Timer(1000, e ->time.setText("系統時間: " + LocalDateTime.now().format(now)));
+		timer.start();
+	    
+	    
+
+	    btnPrint.addActionListener(e -> {
+
+	        String printText =
+	                "CareMate 長照照顧首頁\n\n"
+	                + "姓名：" + nameField.getText()
+	                + "\n年齡：" + ageField.getText()
+	                + "\n心情：" + moodBox.getSelectedItem()
+	                + "\n重要提醒：\n"
+	                + reminderArea.getText();
+
+	        JTextArea printArea =
+	                new JTextArea(printText);
+
+	        try {
+
+	            boolean complete =
+	                    printArea.print();
+
+	            if (complete) {
+
+	                JOptionPane.showMessageDialog(
+	                        null,
+	                        "列印完成"
+	                );
+
+	            } else {
+
+	                JOptionPane.showMessageDialog(
+	                        null,
+	                        "已取消列印"
+	                );
+
+	            }
+
+	        } catch (PrinterException ex) {
+
+	            JOptionPane.showMessageDialog(
+	                    null,
+	                    "列印失敗"
+	            );
+
+	            ex.printStackTrace();
+
+	        }
+
+	    });
+
+	    btnPrint.addActionListener(e -> {
+
+	        String printText =
+	                "CareMate 長照照顧首頁\n\n"
+	                + "姓名：" + nameField.getText() + "\n"
+	                + "年齡：" + ageField.getText() + "\n"
+	                + "心情：" + moodBox.getSelectedItem() + "\n"
+	                + "重要提醒：\n" + reminderArea.getText();
+
+	        JTextArea printArea = new JTextArea(printText);
+
+	        try {
+	            boolean complete = printArea.print();
+
+	            if (complete) {
+	                JOptionPane.showMessageDialog(null, "列印完成");
+	            } else {
+	                JOptionPane.showMessageDialog(null, "已取消列印");
+	            }
+
+	        } catch (PrinterException ex) {
+	            JOptionPane.showMessageDialog(null, "列印失敗：" + ex.getMessage());
+	            ex.printStackTrace();
+	        }
+
+	    });
+	}
+}
