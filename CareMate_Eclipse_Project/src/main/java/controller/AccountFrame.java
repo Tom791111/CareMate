@@ -1,0 +1,1 @@
+package controller; import service.impl.CareTaskServiceImpl; public class AccountFrame extends GenericCrudFrame { public AccountFrame(String role){super(role,"我的帳戶",new String[]{"項目一","項目二","項目三","狀態"},new CareTaskServiceImpl());} }

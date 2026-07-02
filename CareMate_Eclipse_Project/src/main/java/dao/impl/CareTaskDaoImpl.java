@@ -1,0 +1,1 @@
+package dao.impl; import dao.CareTaskDao; import model.CrudRecord; public class CareTaskDaoImpl extends GenericCrudDao<CrudRecord> implements CareTaskDao{ public CareTaskDaoImpl(){super("care_task","task_id",CrudRecord.class);} }

@@ -1,0 +1,1 @@
+package controller; import service.impl.CareTaskServiceImpl; public class PrintFrame extends GenericCrudFrame { public PrintFrame(String role){super(role,"資料列印",new String[]{"項目一","項目二","項目三","狀態"},new CareTaskServiceImpl());} }

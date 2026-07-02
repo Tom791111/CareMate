@@ -1,0 +1,1 @@
+package controller; import service.impl.MealServiceImpl; public class MealFrame extends GenericCrudFrame { public MealFrame(String role){super(role,"飲食營養",new String[]{"餐別","食物內容","飲水ml","營養狀態"},new MealServiceImpl());} }

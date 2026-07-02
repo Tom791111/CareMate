@@ -1,0 +1,1 @@
+package controller; import service.impl.CareTaskServiceImpl; public class SettingFrame extends GenericCrudFrame { public SettingFrame(String role){super(role,"系統設定",new String[]{"項目一","項目二","項目三","狀態"},new CareTaskServiceImpl());} }

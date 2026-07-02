@@ -1,0 +1,1 @@
+package controller; import service.impl.CareTaskServiceImpl; public class VideoCallFrame extends GenericCrudFrame { public VideoCallFrame(String role){super(role,"視訊通話",new String[]{"項目一","項目二","項目三","狀態"},new CareTaskServiceImpl());} }

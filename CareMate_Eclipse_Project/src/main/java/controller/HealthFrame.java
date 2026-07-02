@@ -1,0 +1,1 @@
+package controller; import service.impl.HealthServiceImpl; public class HealthFrame extends GenericCrudFrame { public HealthFrame(String role){super(role,"健康紀錄",new String[]{"收縮壓","舒張壓","體溫","時段"},new HealthServiceImpl());} }
