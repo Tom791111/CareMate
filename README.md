@@ -279,7 +279,7 @@ src
 
 # 🚀 執行方式
 
-## 1. Clone 專案
+## 1.專案
 
 ```bash
 git clone https://github.com/你的GitHub帳號/CareMate.git
