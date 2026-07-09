@@ -1,0 +1,1 @@
+package service.impl; import service.TranslationService; import dao.impl.TranslationDaoImpl; public class TranslationServiceImpl extends GenericCrudService implements TranslationService{ public TranslationServiceImpl(){super(new TranslationDaoImpl());} }

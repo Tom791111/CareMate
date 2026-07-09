@@ -1,0 +1,1 @@
+package service.impl; import service.NotificationService; import dao.impl.NotificationDaoImpl; public class NotificationServiceImpl extends GenericCrudService implements NotificationService{ public NotificationServiceImpl(){super(new NotificationDaoImpl());} }

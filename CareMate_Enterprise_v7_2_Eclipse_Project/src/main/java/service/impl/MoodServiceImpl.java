@@ -1,0 +1,1 @@
+package service.impl; import service.MoodService; import dao.impl.MoodDaoImpl; public class MoodServiceImpl extends GenericCrudService implements MoodService{ public MoodServiceImpl(){super(new MoodDaoImpl());} }

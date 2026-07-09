@@ -1,0 +1,3 @@
+db.url=jdbc:mysql://localhost:3306/caremate_db?useSSL=false&serverTimezone=Asia/Taipei&allowPublicKeyRetrieval=true&characterEncoding=UTF-8
+db.user=root
+db.password=你的MySQL密碼

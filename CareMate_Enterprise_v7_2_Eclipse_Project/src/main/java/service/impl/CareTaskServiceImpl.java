@@ -1,0 +1,1 @@
+package service.impl; import service.CareTaskService; import dao.impl.CareTaskDaoImpl; public class CareTaskServiceImpl extends GenericCrudService implements CareTaskService{ public CareTaskServiceImpl(){super(new CareTaskDaoImpl());} }

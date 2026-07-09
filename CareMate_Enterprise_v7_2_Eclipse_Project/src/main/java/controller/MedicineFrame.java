@@ -1,0 +1,1 @@
+package controller; import service.impl.MedicineServiceImpl; public class MedicineFrame extends GenericCrudFrame { public MedicineFrame(String role){super(role,"用藥管理",new String[]{"藥名","劑量","時段","狀態"},new MedicineServiceImpl());} }

@@ -1,0 +1,1 @@
+package controller; import service.impl.NotificationServiceImpl; public class NotificationFrame extends GenericCrudFrame { public NotificationFrame(String role){super(role,"通知中心",new String[]{"標題","內容","已讀","類型"},new NotificationServiceImpl());} }
