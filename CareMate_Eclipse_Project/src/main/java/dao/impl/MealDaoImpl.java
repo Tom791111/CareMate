@@ -1,1 +1,0 @@
-package dao.impl; import dao.MealDao; import model.CrudRecord; public class MealDaoImpl extends GenericCrudDao<CrudRecord> implements MealDao{ public MealDaoImpl(){super("meal_record","meal_id",CrudRecord.class);} }

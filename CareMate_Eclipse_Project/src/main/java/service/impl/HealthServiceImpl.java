@@ -1,1 +1,0 @@
-package service.impl; import service.HealthService; import dao.impl.HealthDaoImpl; public class HealthServiceImpl extends GenericCrudService implements HealthService{ public HealthServiceImpl(){super(new HealthDaoImpl());} }

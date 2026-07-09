@@ -1,1 +1,0 @@
-package service.impl; import service.MealService; import dao.impl.MealDaoImpl; public class MealServiceImpl extends GenericCrudService implements MealService{ public MealServiceImpl(){super(new MealDaoImpl());} }

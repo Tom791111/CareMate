@@ -1,1 +1,0 @@
-package controller; import service.impl.CareTaskServiceImpl; public class AdminHomeFrame extends GenericCrudFrame { public AdminHomeFrame(String role){super(role,"管理者後台",new String[]{"項目一","項目二","項目三","狀態"},new CareTaskServiceImpl());} }

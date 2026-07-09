@@ -1,1 +1,0 @@
-package dao.impl; import dao.MoodDao; import model.CrudRecord; public class MoodDaoImpl extends GenericCrudDao<CrudRecord> implements MoodDao{ public MoodDaoImpl(){super("mood_record","mood_id",CrudRecord.class);} }

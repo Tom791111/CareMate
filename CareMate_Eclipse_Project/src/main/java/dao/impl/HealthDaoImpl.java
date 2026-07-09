@@ -1,1 +1,0 @@
-package dao.impl; import dao.HealthDao; import model.CrudRecord; public class HealthDaoImpl extends GenericCrudDao<CrudRecord> implements HealthDao{ public HealthDaoImpl(){super("health_record","health_id",CrudRecord.class);} }

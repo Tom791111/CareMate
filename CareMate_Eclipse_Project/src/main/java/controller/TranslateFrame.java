@@ -1,1 +1,0 @@
-package controller; import service.impl.TranslationServiceImpl; public class TranslateFrame extends GenericCrudFrame { public TranslateFrame(String role){super(role,"即時翻譯",new String[]{"來源語言","目標語言","原文","譯文"},new TranslationServiceImpl());} }

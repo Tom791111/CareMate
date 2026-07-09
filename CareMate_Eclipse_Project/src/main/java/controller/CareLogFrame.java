@@ -1,1 +1,0 @@
-package controller; import service.impl.CareTaskServiceImpl; public class CareLogFrame extends GenericCrudFrame { public CareLogFrame(String role){super(role,"照護日誌",new String[]{"項目一","項目二","項目三","狀態"},new CareTaskServiceImpl());} }

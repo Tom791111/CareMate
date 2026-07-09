@@ -1,1 +1,0 @@
-package controller; import service.impl.CareTaskServiceImpl; public class ElderProfileFrame extends GenericCrudFrame { public ElderProfileFrame(String role){super(role,"被照顧者資料",new String[]{"項目一","項目二","項目三","狀態"},new CareTaskServiceImpl());} }

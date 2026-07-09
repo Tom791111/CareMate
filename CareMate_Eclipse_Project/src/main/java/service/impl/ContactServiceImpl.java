@@ -1,1 +1,0 @@
-package service.impl; import service.ContactService; import dao.impl.ContactDaoImpl; public class ContactServiceImpl extends GenericCrudService implements ContactService{ public ContactServiceImpl(){super(new ContactDaoImpl());} }

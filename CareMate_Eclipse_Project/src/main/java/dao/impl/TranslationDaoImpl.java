@@ -1,1 +1,0 @@
-package dao.impl; import dao.TranslationDao; import model.CrudRecord; public class TranslationDaoImpl extends GenericCrudDao<CrudRecord> implements TranslationDao{ public TranslationDaoImpl(){super("translation_history","translation_id",CrudRecord.class);} }

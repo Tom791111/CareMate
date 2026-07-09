@@ -1,1 +1,0 @@
-package controller; import service.impl.MoodServiceImpl; public class MoodFrame extends GenericCrudFrame { public MoodFrame(String role){super(role,"情緒紀錄",new String[]{"情緒","分數","狀態","來源"},new MoodServiceImpl());} }

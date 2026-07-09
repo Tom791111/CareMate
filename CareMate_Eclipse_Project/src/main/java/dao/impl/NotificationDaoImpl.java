@@ -1,1 +1,0 @@
-package dao.impl; import dao.NotificationDao; import model.CrudRecord; public class NotificationDaoImpl extends GenericCrudDao<CrudRecord> implements NotificationDao{ public NotificationDaoImpl(){super("notification","notification_id",CrudRecord.class);} }

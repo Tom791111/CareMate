@@ -1,1 +1,0 @@
-package dao.impl; import dao.EmergencyDao; import model.CrudRecord; public class EmergencyDaoImpl extends GenericCrudDao<CrudRecord> implements EmergencyDao{ public EmergencyDaoImpl(){super("emergency_log","emergency_id",CrudRecord.class);} }

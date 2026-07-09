@@ -1,1 +1,0 @@
-package dao.impl; import dao.ContactDao; import model.CrudRecord; public class ContactDaoImpl extends GenericCrudDao<CrudRecord> implements ContactDao{ public ContactDaoImpl(){super("contact","contact_id",CrudRecord.class);} }

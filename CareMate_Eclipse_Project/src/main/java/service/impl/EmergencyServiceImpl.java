@@ -1,1 +1,0 @@
-package service.impl; import service.EmergencyService; import dao.impl.EmergencyDaoImpl; public class EmergencyServiceImpl extends GenericCrudService implements EmergencyService{ public EmergencyServiceImpl(){super(new EmergencyDaoImpl());} }

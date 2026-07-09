@@ -1,1 +1,0 @@
-package service;import model.CrudRecord;import java.util.*; public interface CrudService{void add(CrudRecord r); List<CrudRecord> getAll(); CrudRecord getById(int id); void modify(CrudRecord r); void remove(int id);}
